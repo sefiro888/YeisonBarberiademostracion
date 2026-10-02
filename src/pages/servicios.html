@@ -1,0 +1,132 @@
+<!-- {"title": "Servicios y precios · Yeison Barber Shop, Fene", "desc": "La carta de Yeison Barber Shop en Fene: corte adulto 15 €, corte + barba 18 €, jubilados los martes 12 €. Arma tu cita y reserva por Booksy o WhatsApp.", "nav": "servicios"} -->
+
+<section class="page-hero">
+  <div class="wrap page-hero-in">
+    <p class="crumbs"><a href="index.html">Inicio</a> <span>/</span> Servicios</p>
+    <p class="eyebrow">I · La carta</p>
+    <h1 class="split">Precios claros, <span class="script">sin sorpresas</span></h1>
+    {{swash}}
+    <p class="lead">Los mismos que en Booksy. Elige tu servicio, mira cuánto dura y pide tu hora en dos toques.</p>
+  </div>
+  <img class="page-hero-art" src="assets/img/trabajos/trabajo-20-sm.jpg" alt="" aria-hidden="true" width="520" height="693">
+</section>
+
+<section class="section carta" id="carta">
+  <div class="wrap">
+    <div class="board frame reveal">
+      <img class="board-logo" src="assets/img/marca/logo-sm.png" alt="" width="420" height="365" aria-hidden="true">
+      <div class="board-col">
+        <h2>Cortes</h2>
+        <ul class="menu">
+          <li><span class="m-name">Corte adulto <small>a partir de 8 años</small></span><span class="m-dur">30 min</span><span class="m-dots"></span><span class="m-price">15 €</span></li>
+          <li><span class="m-name">Corte + cejas</span><span class="m-dur">30 min</span><span class="m-dots"></span><span class="m-price">17 €</span></li>
+          <li><span class="m-name">Corte + lavado</span><span class="m-dur">35 min</span><span class="m-dots"></span><span class="m-price">16 €</span></li>
+          <li><span class="m-name">Corte niño <small>hasta 8 años</small></span><span class="m-dur">30 min</span><span class="m-dots"></span><span class="m-price">12 €</span></li>
+          <li class="is-tue"><span class="m-name">Corte jubilado <small>solo los martes</small></span><span class="m-dur">20 min</span><span class="m-dots"></span><span class="m-price">12 €</span></li>
+        </ul>
+      </div>
+      <div class="board-col">
+        <h2>Barba y combinados</h2>
+        <ul class="menu">
+          <li><span class="m-name">Solo barba</span><span class="m-dur">15 min</span><span class="m-dots"></span><span class="m-price">10 €</span></li>
+          <li><span class="m-name">Corte + afeitado</span><span class="m-dur">40 min</span><span class="m-dots"></span><span class="m-price">16 €</span></li>
+          <li class="is-star"><span class="m-name">Corte + barba <small>el más pedido</small></span><span class="m-dur">50 min</span><span class="m-dots"></span><span class="m-price">18 €</span></li>
+          <li><span class="m-name">Corte + lavado + barba</span><span class="m-dur">1 h</span><span class="m-dots"></span><span class="m-price">20 €</span></li>
+          <li><span class="m-name">Bono semanal + cejas</span><span class="m-dur">30 min</span><span class="m-dots"></span><span class="m-price">52 €</span></li>
+        </ul>
+      </div>
+      <p class="board-note">Depilación facial con cera y arreglo de cejas: pregunta en tu cita.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ink builder-sec" id="reserva">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="eyebrow">Arma tu cita</p>
+      <h2 class="split">Elige, <span class="script">y te esperamos</span></h2>
+      {{swash-light}}
+      <p class="sec-lead">Marca lo que quieres y te preparamos el mensaje para WhatsApp, o te llevamos directo a Booksy.</p>
+    </header>
+
+    <div class="builder reveal" data-builder>
+      <div class="builder-steps">
+        <fieldset class="step">
+          <legend><span class="step-n">1</span> ¿Qué te hacemos?</legend>
+          <div class="opt-grid" data-services></div>
+        </fieldset>
+        <fieldset class="step">
+          <legend><span class="step-n">2</span> ¿Con quién?</legend>
+          <div class="opt-row">
+            <label class="opt opt-barber"><input type="radio" name="barbero" value="Yeison"><img src="assets/img/yeison.jpg" alt="" width="1100" height="1100"><span>Yeison</span></label>
+            <label class="opt opt-barber"><input type="radio" name="barbero" value="Juan"><img src="assets/img/juan.jpg" alt="" width="1100" height="1100"><span>Juan</span></label>
+            <label class="opt opt-barber"><input type="radio" name="barbero" value="" checked><span class="opt-any">✦</span><span>Me da igual</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="step">
+          <legend><span class="step-n">3</span> ¿Qué día te viene bien?</legend>
+          <div class="opt-row opt-days" data-days></div>
+          <div class="opt-row opt-slots" data-slots></div>
+        </fieldset>
+      </div>
+
+      <aside class="ticket" aria-live="polite">
+        <div class="ticket-head">
+          <img src="assets/img/marca/logo-sm.png" alt="" width="420" height="365">
+          <p class="rye">Tu cita</p>
+        </div>
+        <dl class="ticket-lines">
+          <div><dt>Servicio</dt><dd data-t="service">Elige uno</dd></div>
+          <div><dt>Barbero</dt><dd data-t="barber">El primero libre</dd></div>
+          <div><dt>Cuándo</dt><dd data-t="when">Elige día</dd></div>
+          <div><dt>Duración</dt><dd data-t="dur">—</dd></div>
+        </dl>
+        <p class="ticket-total"><span>Total</span><b data-t="price">0 €</b></p>
+        <div class="ticket-cut" aria-hidden="true"></div>
+        <a class="btn btn-wa btn-block" data-t="wa" href="{{WA}}" target="_blank" rel="noopener">{{wa}} Pedir por WhatsApp</a>
+        <a class="btn btn-red btn-block" href="{{BOOKSY}}" target="_blank" rel="noopener">Ver horas libres en Booksy {{arrow}}</a>
+        <p class="ticket-note">Las horas libres exactas se ven en Booksy. Por WhatsApp te confirmamos a mano.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section extras" id="extras">
+  <div class="wrap">
+    <div class="perks">
+      <article class="perk perk-tue reveal" data-tuesday>
+        <span class="perk-tag rye">Martes</span>
+        <h3>Jubilados a 12 €</h3>
+        <p>Cada martes, corte para mayores a precio especial. <span class="today-flag">Hoy es martes: aprovecha.</span></p>
+      </article>
+      <article class="perk reveal">
+        <span class="perk-tag rye">Peques</span>
+        <h3>Hasta 8 años, 12 €</h3>
+        <p>Con paciencia y sin prisas. «Mi hijo salió muy contento, corte tal cual quería», cuenta Raúl.</p>
+      </article>
+      <article class="perk reveal">
+        <span class="perk-tag rye">Bono</span>
+        <h3>Semanal + cejas, 52 €</h3>
+        <p>Para los que no se dejan ni un pelo fuera de sitio. Pregunta cómo funciona en tu próxima cita.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section faq-sec">
+  <div class="wrap faq-in">
+    <header class="reveal">
+      <p class="eyebrow">Preguntas de la silla</p>
+      <h2 class="split">Lo que siempre <span class="script">nos preguntan</span></h2>
+      <p class="sec-lead">¿Te queda alguna duda? Escríbenos por <a href="{{WA}}" target="_blank" rel="noopener">WhatsApp</a> o llama al <a href="tel:+34617781215">617 781 215</a>.</p>
+    </header>
+    <div class="faq reveal">
+      <details open><summary>¿Hace falta pedir cita?</summary><p>Es lo más seguro: en Booksy ves las horas libres de Yeison y de Juan y te llega un recordatorio al móvil. Si quieres venir hoy mismo, llama antes y te decimos si hay hueco.</p></details>
+      <details><summary>¿Qué día es el corte de jubilados?</summary><p>Los martes. El corte cuesta 12 € y dura unos 20 minutos.</p></details>
+      <details><summary>¿Cortáis el pelo a niños?</summary><p>Sí. Hasta los 8 años el corte cuesta 12 €; a partir de ahí se aplica la tarifa de adulto.</p></details>
+      <details><summary>¿Puedo ir con mi perro?</summary><p>Sí, las mascotas son bienvenidas en el local.</p></details>
+      <details><summary>¿Dónde aparco?</summary><p>El local tiene plaza de aparcamiento y acceso adaptado. Estamos en la Av. Marqués de Figueroa, 15, bajo izquierda.</p></details>
+      <details><summary>¿Cómo cambio o anulo una cita?</summary><p>Desde la propia app de Booksy, en «Mis citas». Si reservaste por WhatsApp, escríbenos por el mismo chat.</p></details>
+    </div>
+  </div>
+</section>

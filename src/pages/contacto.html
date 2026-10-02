@@ -1,0 +1,82 @@
+<!-- {"title": "Horario y contacto · Yeison Barber Shop, Fene", "desc": "Horario de Yeison Barber Shop: de martes a viernes 9:30–13:30 y 16:30–20:30, sábado 9:00–14:00. Av. Marqués de Figueroa, 15, Fene. Tel. 617 781 215.", "nav": "contacto"} -->
+
+<section class="page-hero">
+  <div class="wrap page-hero-in">
+    <p class="crumbs"><a href="index.html">Inicio</a> <span>/</span> Contacto</p>
+    <p class="eyebrow">VI · Horario y contacto</p>
+    <h1 class="split">Te esperamos <span class="script">en la avenida</span></h1>
+    {{swash}}
+    <p class="status status-pill status-big" data-status><i></i><span>Consultando horario…</span></p>
+  </div>
+  <img class="page-hero-art" src="assets/img/local.jpg" alt="" aria-hidden="true" width="1100" height="619">
+</section>
+
+<section class="section contact">
+  <div class="wrap contact-in">
+    <div class="contact-card frame reveal">
+      <h2>Horario</h2>
+      <table class="hours">
+        <caption class="sr">Horario de apertura</caption>
+        <tbody>
+          <tr data-day="2"><th>Martes</th><td>9:30 – 13:30 <span>·</span> 16:30 – 20:30</td></tr>
+          <tr data-day="3"><th>Miércoles</th><td>9:30 – 13:30 <span>·</span> 16:30 – 20:30</td></tr>
+          <tr data-day="4"><th>Jueves</th><td>9:30 – 13:30 <span>·</span> 16:30 – 20:30</td></tr>
+          <tr data-day="5"><th>Viernes</th><td>9:30 – 13:30 <span>·</span> 16:30 – 20:30</td></tr>
+          <tr data-day="6"><th>Sábado</th><td>9:00 – 14:00</td></tr>
+          <tr data-day="0" class="closed"><th>Domingo</th><td>Cerrado</td></tr>
+          <tr data-day="1" class="closed"><th>Lunes</th><td>Cerrado</td></tr>
+        </tbody>
+      </table>
+      <div class="day-bar" data-daybar aria-hidden="true"><span class="day-now"></span></div>
+      <p class="day-bar-legend" aria-hidden="true"><span>9:00</span><span>14:00</span><span>20:30</span></p>
+    </div>
+
+    <div class="contact-ways">
+      <a class="way reveal" href="tel:+34617781215">{{phone}}<span><b>Llamar</b>617 781 215</span></a>
+      <a class="way way-wa reveal" href="{{WA}}" target="_blank" rel="noopener">{{wa}}<span><b>WhatsApp</b>Escríbenos cuando quieras</span></a>
+      <a class="way way-bk reveal" href="{{BOOKSY}}" target="_blank" rel="noopener"><i class="bk">b</i><span><b>Booksy</b>Reserva con hora exacta</span></a>
+      <a class="way way-ig reveal" href="https://www.instagram.com/yeisonbarbershop01/" target="_blank" rel="noopener">{{ig}}<span><b>Instagram</b>@yeisonbarbershop01</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ink map-sec">
+  <div class="wrap map-in">
+    <div class="reveal">
+      <p class="eyebrow">Dónde estamos</p>
+      <h2 class="split">Av. Marqués <span class="script">de Figueroa, 15</span></h2>
+      <address>Bajo izquierda<br>15500 Fene, A Coruña</address>
+      <p class="sec-lead">En plena avenida de Fene. El local tiene plaza de aparcamiento y acceso adaptado.</p>
+      <div class="visit-btns">
+        <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&destination=Yeisonbarbershop%2C%20Av.%20Marqu%C3%A9s%20de%20Figueroa%2015%2C%2015500%20Fene" target="_blank" rel="noopener">{{pin}} Cómo llegar</a>
+        <a class="btn btn-gold-line" href="https://share.google/eSzthD45pywfF91vz" target="_blank" rel="noopener">Ficha de Google</a>
+      </div>
+    </div>
+    <div class="map frame reveal">
+      <iframe title="Mapa: Yeison Barber Shop en Fene" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Yeisonbarbershop%2C%20Avenida%20Marqu%C3%A9s%20de%20Figueroa%2015%2C%2015500%20Fene&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section msg-sec">
+  <div class="wrap msg-in">
+    <header class="reveal">
+      <p class="eyebrow">Escríbenos</p>
+      <h2 class="split">Déjanos <span class="script">tu mensaje</span></h2>
+      <p class="sec-lead">Rellena lo básico y se abre WhatsApp con el mensaje listo. No guardamos nada en esta web.</p>
+    </header>
+    <form class="msg-form frame reveal" data-msg>
+      <label>Tu nombre<input name="nombre" autocomplete="given-name" required></label>
+      <label>¿Qué necesitas?
+        <select name="motivo">
+          <option>Pedir cita</option>
+          <option>Cambiar una cita</option>
+          <option>Preguntar un precio</option>
+          <option>Otra cosa</option>
+        </select>
+      </label>
+      <label class="full">Mensaje<textarea name="mensaje" rows="4" placeholder="Ej.: ¿tenéis hueco el sábado por la mañana para corte y barba?"></textarea></label>
+      <button class="btn btn-wa full" type="submit">{{wa}} Abrir en WhatsApp</button>
+    </form>
+  </div>
+</section>

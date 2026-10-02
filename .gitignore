@@ -1,0 +1,7 @@
+# Material de trabajo que no forma parte de la web publicada
+_fuentes/
+_antiguo/
+logo.jpg
+logo-nuevo.jpg
+.claude/
+node_modules/

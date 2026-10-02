@@ -1,0 +1,77 @@
+<!-- {"title": "Trabajos · Yeison Barber Shop, Fene", "desc": "43 cortes reales hechos en Yeison Barber Shop (Fene): degradados, texturas, diseños a cuchilla, barba y cortes para peques. Fotos y vídeos.", "nav": "trabajos"} -->
+
+<section class="page-hero">
+  <div class="wrap page-hero-in">
+    <p class="crumbs"><a href="index.html">Inicio</a> <span>/</span> Trabajos</p>
+    <p class="eyebrow">II · Trabajos</p>
+    <h1 class="split">Cortes reales, <span class="script">hechos aquí</span></h1>
+    {{swash}}
+    <p class="lead">Nada de fotos de catálogo: todo salió de las dos sillas de Fene. Filtra por estilo, ábrelo en grande y, si te gusta uno, pídelo tal cual.</p>
+  </div>
+  <img class="page-hero-art" src="assets/img/trabajos/trabajo-13-sm.jpg" alt="" aria-hidden="true" width="520" height="693">
+</section>
+
+<section class="section works">
+  <div class="wrap">
+    <div class="filters reveal" role="group" aria-label="Filtrar trabajos">
+      <button class="chip is-on" data-filter="todos" aria-pressed="true">Todos <small></small></button>
+      <button class="chip" data-filter="degradado" aria-pressed="false">Degradados <small></small></button>
+      <button class="chip" data-filter="textura" aria-pressed="false">Texturas y flequillos <small></small></button>
+      <button class="chip" data-filter="diseno" aria-pressed="false">Diseños <small></small></button>
+      <button class="chip" data-filter="barba" aria-pressed="false">Barba <small></small></button>
+      <button class="chip" data-filter="peques" aria-pressed="false">Peques <small></small></button>
+    </div>
+    <div class="gallery" id="gallery"></div>
+    <div class="gallery-more"><button class="btn btn-line" id="more">Ver más trabajos</button></div>
+  </div>
+</section>
+
+<section class="section quiz-sec quiz-sec-tight">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="eyebrow">¿Dudas entre varios?</p>
+      <h2 class="split">Encuentra <span class="script">tu corte</span></h2>
+      {{swash}}
+    </header>
+    <div class="quiz reveal" data-quiz></div>
+  </div>
+</section>
+
+<section class="section section-ink reels">
+  <div class="wrap">
+    <header class="sec-head sec-head-row reveal">
+      <div>
+        <p class="eyebrow">En movimiento</p>
+        <h2 class="split">El resultado, <span class="script">en vídeo</span></h2>
+      </div>
+      <a class="ig-link" href="https://www.instagram.com/yeisonbarbershop01/" target="_blank" rel="noopener">
+        <span class="ig-ico">{{ig}}</span>
+        <span><b>@yeisonbarbershop01</b><small>Más vídeos en Instagram</small></span>
+      </a>
+    </header>
+    <div class="reel-row">
+      <figure class="phone reveal"><video data-src="assets/video/corte-textura.mp4" poster="assets/video/corte-textura.jpg" muted loop playsinline preload="none" aria-label="Vídeo de un corte con textura"></video><figcaption>Textura + degradado</figcaption></figure>
+      <figure class="phone reveal"><video data-src="assets/video/corte-degradado.mp4" poster="assets/video/corte-degradado.jpg" muted loop playsinline preload="none" aria-label="Vídeo de un degradado bajo"></video><figcaption>Degradado al detalle</figcaption></figure>
+      <figure class="phone reveal"><video data-src="assets/video/corte-peque.mp4" poster="assets/video/corte-peque.jpg" muted loop playsinline preload="none" aria-label="Vídeo del corte de un niño"></video><figcaption>Corte peque</figcaption></figure>
+      <figure class="phone reveal"><video data-src="assets/video/corte-burst.mp4" poster="assets/video/corte-burst.jpg" muted loop playsinline preload="none" aria-label="Vídeo de un burst fade"></video><figcaption>Burst fade</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-strip">
+  <div class="wrap cta-strip-in frame reveal">
+    <h2 class="split">¿Has visto <span class="script">el tuyo?</span></h2>
+    <p>Abre la foto y pulsa «Quiero este corte»: te preparamos el mensaje para que se lo enseñes a Yeison o a Juan.</p>
+    <a class="btn btn-red" href="{{BOOKSY}}" target="_blank" rel="noopener">Reservar cita {{arrow}}</a>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Trabajo ampliado" hidden>
+  <button class="lb-close" aria-label="Cerrar">×</button>
+  <button class="lb-prev" aria-label="Anterior">‹</button>
+  <figure>
+    <img alt="">
+    <figcaption><span class="lb-cap"></span><a class="btn btn-wa btn-sm lb-want" href="{{WA}}" target="_blank" rel="noopener">{{wa}} Quiero este corte</a></figcaption>
+  </figure>
+  <button class="lb-next" aria-label="Siguiente">›</button>
+</div>
