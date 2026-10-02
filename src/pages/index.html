@@ -2,19 +2,31 @@
 
 <section class="hero">
   <div class="lamp hero-lamp" aria-hidden="true"><span class="lamp-mount"></span><span class="lamp-cap lamp-top"></span><span class="lamp-glass"></span><span class="lamp-cap lamp-bottom"></span></div>
+  <div class="ticker ticker-top" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Degradados</span><i>✦</i><span>Burst fade</span><i>✦</i><span>Texturas</span><i>✦</i><span>Diseños a cuchilla</span><i>✦</i><span>Barba</span><i>✦</i><span>Afeitado</span><i>✦</i><span>Cejas</span><i>✦</i><span>Peques</span><i>✦</i>
+      <span>Degradados</span><i>✦</i><span>Burst fade</span><i>✦</i><span>Texturas</span><i>✦</i><span>Diseños a cuchilla</span><i>✦</i><span>Barba</span><i>✦</i><span>Afeitado</span><i>✦</i><span>Cejas</span><i>✦</i><span>Peques</span><i>✦</i>
+    </div>
+  </div>
   <div class="wrap hero-in">
     <div class="hero-copy">
       <p class="badge-line"><span class="rye">N.º 15</span> Av. Marqués de Figueroa · Fene</p>
       <h1 class="split">Cortes con oficio, <span class="script">trato de casa.</span></h1>
-      <p class="lead">Yeison y Juan llevan la barbería de la avenida: degradados al milímetro, texturas con carácter, barba a navaja y un ambiente en el que da gusto esperar turno.</p>
+      {{swash}}
+      <p class="lead">Yeison y Juan llevan la barbería de la avenida: <mark>degradados al milímetro</mark>, texturas con carácter, <mark>barba a navaja</mark> y un ambiente en el que da gusto esperar turno.</p>
+      <ul class="hero-facts">
+        <li>{{clock}}<span><b>Martes a sábado</b><small>Mañana y tarde</small></span></li>
+        <li>{{scissors}}<span><b>Corte 15 €</b><small>Barba desde 10 €</small></span></li>
+        <li>{{pin}}<span><b>Aparcamiento</b><small>Y acceso adaptado</small></span></li>
+      </ul>
       <div class="hero-cta">
         <a class="btn btn-red btn-lg magnetic" href="{{BOOKSY}}" target="_blank" rel="noopener">Reservar cita {{arrow}}</a>
         <a class="btn btn-wa btn-lg magnetic" href="{{WA}}" target="_blank" rel="noopener">{{wa}} WhatsApp</a>
       </div>
-      <div class="hero-meta">
+      <div class="hero-card">
         <p class="status status-pill" data-status><i></i><span>Consultando horario…</span></p>
         <p class="countdown" data-countdown><span class="cd-label">Cierra en</span><span class="cd-digits"></span></p>
-        <p class="hero-rating"><b>5,0</b><span class="stars">★★★★★</span><small>229 reseñas en Booksy</small></p>
+        <a class="hero-rating" href="opiniones.html"><b>5,0</b><span class="stars">★★★★★</span><small>229 reseñas en Booksy</small></a>
       </div>
     </div>
 
@@ -94,21 +106,34 @@
 </section>
 
 <!-- El ritual -->
-<section class="ritual-pin" data-pin>
-  <div class="ritual-sticky">
-    <header class="ritual-head wrap">
+<section class="ritual" id="ritual">
+  <div class="wrap ritual-in">
+    <aside class="ritual-side">
       <p class="eyebrow">El ritual</p>
       <h2 class="split">De la silla <span class="script">al espejo</span></h2>
-    </header>
-    <div class="ritual-track" data-pin-track>
-      <article class="rp"><figure class="razor"><img src="assets/img/trabajos/trabajo-22.jpg" alt="Yeison empezando un corte en la barbería" loading="lazy" width="1100" height="1467"></figure><div class="rp-txt"><span class="rp-n">01</span><h3>Nos cuentas</h3><p>Qué quieres, cómo te peinas, una foto si la tienes. Te escuchamos sin prisas.</p></div></article>
-      <article class="rp"><figure class="razor"><img src="assets/img/trabajos/trabajo-41.jpg" alt="Degradado a máquina muy apurado" loading="lazy" width="1100" height="1100"></figure><div class="rp-txt"><span class="rp-n">02</span><h3>Máquina</h3><p>El degradado se construye por capas, de la nuca hacia arriba, hasta que no se nota el salto.</p></div></article>
-      <article class="rp"><figure class="razor"><img src="assets/img/trabajos/trabajo-14.jpg" alt="Corte con textura y flequillo" loading="lazy" width="1100" height="1467"></figure><div class="rp-txt"><span class="rp-n">03</span><h3>Tijera y textura</h3><p>Arriba manda la tijera: volumen, flequillo y ese movimiento que no se consigue a máquina.</p></div></article>
-      <article class="rp"><figure class="razor"><img src="assets/img/trabajos/trabajo-34.jpg" alt="Línea a cuchilla y barba perfilada" loading="lazy" width="1100" height="1467"></figure><div class="rp-txt"><span class="rp-n">04</span><h3>Navaja</h3><p>Perfilado, líneas y barba a cuchilla. Aquí es donde un corte se convierte en firma.</p></div></article>
-      <article class="rp"><figure class="razor"><img src="assets/img/trabajos/trabajo-03.jpg" alt="Resultado final de un burst fade con textura" loading="lazy" width="1100" height="1467"></figure><div class="rp-txt"><span class="rp-n">05</span><h3>El espejo</h3><p>Peinado, repaso y espejo. Si algo no te convence, se retoca en el momento.</p></div></article>
-      <article class="rp rp-cta"><div class="rp-txt"><span class="rp-n">06</span><h3>Ahora te toca <span class="script">a ti</span></h3><p>Elige hora y barbero. Te guardamos la silla.</p><div class="hero-cta"><a class="btn btn-red btn-lg" href="{{BOOKSY}}" target="_blank" rel="noopener">Reservar cita {{arrow}}</a><a class="btn btn-wa btn-lg" href="{{WA}}" target="_blank" rel="noopener">{{wa}} WhatsApp</a></div></div></article>
+      <p class="sec-lead">Así es un corte en la avenida, de principio a fin. Cinco pasos, sin prisas y con el espejo como juez.</p>
+      <div class="ritual-meter">
+        <div class="lamp ritual-lamp" aria-hidden="true"><span class="lamp-cap lamp-top"></span><span class="lamp-glass"></span><span class="lamp-cap lamp-bottom"></span></div>
+        <ol class="ritual-steps" data-ritual-steps>
+          <li class="is-on"><span>01</span>Nos cuentas</li>
+          <li><span>02</span>Máquina</li>
+          <li><span>03</span>Tijera y textura</li>
+          <li><span>04</span>Navaja</li>
+          <li><span>05</span>El espejo</li>
+        </ol>
+      </div>
+    </aside>
+    <div class="ritual-stack">
+      <article class="rs" style="--i:0"><img src="assets/img/trabajos/trabajo-22.jpg" alt="Yeison empezando un corte en la barbería" loading="lazy" width="1100" height="1467"><div class="rs-txt"><span class="rs-n">01</span><h3>Nos cuentas</h3><p>Qué quieres, cómo te peinas, una foto si la tienes. Te escuchamos sin prisas.</p></div></article>
+      <article class="rs" style="--i:1"><img src="assets/img/trabajos/trabajo-41.jpg" alt="Degradado a máquina muy apurado" loading="lazy" width="1100" height="1100"><div class="rs-txt"><span class="rs-n">02</span><h3>Máquina</h3><p>El degradado se construye por capas, de la nuca hacia arriba, hasta que no se nota el salto.</p></div></article>
+      <article class="rs" style="--i:2"><img src="assets/img/trabajos/trabajo-14.jpg" alt="Corte con textura y flequillo" loading="lazy" width="1100" height="1467"><div class="rs-txt"><span class="rs-n">03</span><h3>Tijera y textura</h3><p>Arriba manda la tijera: volumen, flequillo y ese movimiento que no se consigue a máquina.</p></div></article>
+      <article class="rs" style="--i:3"><img src="assets/img/trabajos/trabajo-34.jpg" alt="Línea a cuchilla y barba perfilada" loading="lazy" width="1100" height="1467"><div class="rs-txt"><span class="rs-n">04</span><h3>Navaja</h3><p>Perfilado, líneas y barba a cuchilla. Aquí un corte se convierte en firma.</p></div></article>
+      <article class="rs" style="--i:4"><img src="assets/img/trabajos/trabajo-03.jpg" alt="Resultado final de un burst fade con textura" loading="lazy" width="1100" height="1467"><div class="rs-txt"><span class="rs-n">05</span><h3>El espejo</h3><p>Peinado, repaso y espejo. Si algo no te convence, se retoca en el momento.</p></div></article>
+      <div class="rs-end">
+        <p class="script">Ahora te toca a ti</p>
+        <div class="hero-cta"><a class="btn btn-red btn-lg" href="{{BOOKSY}}" target="_blank" rel="noopener">Reservar cita {{arrow}}</a><a class="btn btn-wa btn-lg" href="{{WA}}" target="_blank" rel="noopener">{{wa}} WhatsApp</a></div>
+      </div>
     </div>
-    <div class="ritual-progress" aria-hidden="true"><span></span></div>
   </div>
 </section>
 
@@ -149,15 +174,15 @@
       <a class="link-arrow" href="equipo.html">Conoce a Yeison y a Juan {{arrow}}</a>
     </div>
     <div class="duo">
-      <a class="duo-card reveal razor" data-cursor="ver" href="equipo.html#yeison">
-        <img src="assets/img/yeison.jpg" alt="Yeison en el sillón de su barbería" loading="lazy" width="1100" height="1100">
-        <span class="duo-name script">Yeison</span>
-        <span class="duo-meta"><b data-count="151">151</b> reseñas atendidas</span>
+      <a class="mini-license reveal" href="equipo.html#yeison" data-cursor="ver">
+        <span class="ml-photo razor"><img src="assets/img/yeison.jpg" alt="Yeison en el sillón de su barbería" loading="lazy" width="1100" height="1100"><span class="stamp">Fundador</span></span>
+        <span class="ml-name script">Yeison</span>
+        <span class="ml-meta"><span class="flag flag-do" aria-hidden="true"></span> República Dominicana · <b data-count="151">151</b> reseñas</span>
       </a>
-      <a class="duo-card reveal razor" data-cursor="ver" href="equipo.html#juan">
-        <img src="assets/img/juan.jpg" alt="Juan sonriendo en la barbería" loading="lazy" width="1100" height="1100">
-        <span class="duo-name script">Juan</span>
-        <span class="duo-meta"><b data-count="78">78</b> reseñas atendidas</span>
+      <a class="mini-license reveal" href="equipo.html#juan" data-cursor="ver">
+        <span class="ml-photo razor"><img src="assets/img/juan.jpg" alt="Juan Valencia sonriendo en la barbería" loading="lazy" width="1100" height="1100"><span class="stamp">5,0 ★</span></span>
+        <span class="ml-name script">Juan</span>
+        <span class="ml-meta"><span class="flag flag-co" aria-hidden="true"></span> Colombia · <b data-count="78">78</b> reseñas</span>
       </a>
     </div>
   </div>

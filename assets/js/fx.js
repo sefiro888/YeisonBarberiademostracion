@@ -57,7 +57,7 @@
 
   /* ---------- 3. Cursor de barbero ---------- */
   const cursor = $('.cursor');
-  if (cursor && fine && !reduce) {
+  if (cursor && fine && !reduce && innerWidth > 1024) {
     root.classList.add('has-cursor');
     cursor.classList.add('is-hidden');
     const dot = $('.cursor-dot', cursor), ring = $('.cursor-ring', cursor), snip = $('.cursor-snip', cursor);
@@ -97,16 +97,15 @@
     track.append(...[...track.children].map(n => n.cloneNode(true)));
     return { track, dir: +row.dataset.velocity || 1, x: 0 };
   });
-  const ticker = $('.ticker-track');
-  if (ticker) ticker.style.animation = 'none';
-  const tk = ticker ? { track: ticker, dir: 1, x: 0 } : null;
-  if (rows.length || tk) {
+  const tks = $$('.ticker-track').map(track => { track.style.animation = 'none'; return { track, dir: 1, x: 0, tk: true }; });
+  if (rows.length || tks.length) {
     const run = () => {
       const boost = clamp(Math.abs(vel) * .35, 0, 18);
       const sign = vel < -0.5 ? -1 : 1;
-      [...rows, ...(tk ? [tk] : [])].forEach(r => {
+      [...rows, ...tks].forEach(r => {
         const half = r.track.scrollWidth / 2;
-        r.x -= (reduce ? 0 : (r === tk ? .7 : .55) + boost) * r.dir * sign;
+        if (!r.track.offsetParent) return;
+        r.x -= (reduce ? 0 : (r.tk ? .7 : .55) + boost) * r.dir * sign;
         if (r.x <= -half) r.x += half;
         if (r.x > 0) r.x -= half;
         const skew = reduce ? 0 : clamp(vel * -.12, -8, 8);
@@ -141,6 +140,31 @@
     addEventListener('resize', size);
     addEventListener('load', size);
     requestAnimationFrame(move);
+  }
+
+  /* ---------- 6b. El ritual: tarjetas que se apilan ---------- */
+  const stack = $$('.rs');
+  if (stack.length) {
+    const steps = $$('[data-ritual-steps] li');
+    const loopStack = () => {
+      let active = 0;
+      stack.forEach((card, i) => {
+        const top = parseFloat(getComputedStyle(card).top) || 0;
+        const r = card.getBoundingClientRect();
+        if (r.top <= top + 2) active = i;
+        const next = stack[i + 1];
+        let k = 0;
+        if (next) {
+          const nt = parseFloat(getComputedStyle(next).top) || 0;
+          k = clamp((r.height - (next.getBoundingClientRect().top - nt)) / r.height, 0, 1);
+        }
+        card.style.transform = reduce ? '' : `scale(${1 - k * .07})`;
+        card.style.filter = k > 0 ? `brightness(${1 - k * .45})` : '';
+      });
+      steps.forEach((li, i) => { li.classList.toggle('is-on', i === active); li.classList.toggle('is-done', i < active); });
+      requestAnimationFrame(loopStack);
+    };
+    requestAnimationFrame(loopStack);
   }
 
   /* ---------- 7. Test «Encuentra tu corte» ---------- */
