@@ -49,12 +49,16 @@ const layout = (meta, body, file) => `<!doctype html>
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Yeison Barber Shop">
 <meta property="og:title" content="${meta.ogTitle || meta.title}">
-<meta property="og:description" content="${meta.desc}">
+<meta property="og:description" content="${meta.ogDesc || meta.desc}">
 <meta property="og:url" content="${SITE}${file === 'index.html' ? '' : file}">
 <link rel="canonical" href="${SITE}${file === 'index.html' ? '' : file}">
-<meta property="og:image" content="${SITE}assets/img/og.jpg">
-<meta property="og:image:alt" content="Yeison Barber Shop, barbería en Fene">
-<meta name="twitter:image" content="${SITE}assets/img/og.jpg">
+<meta property="og:image" content="${SITE}assets/img/og-yeison.jpg">
+<meta property="og:image:secure_url" content="${SITE}assets/img/og-yeison.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Sello de Yeison Barber Shop con valoración 5,0, servicios y dirección en Fene">
+<meta name="twitter:image" content="${SITE}assets/img/og-yeison.jpg">
+<meta name="twitter:title" content="${meta.ogTitle || meta.title}">
+<meta name="twitter:description" content="${meta.ogDesc || meta.desc}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
