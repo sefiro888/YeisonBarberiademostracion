@@ -4,7 +4,6 @@
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const root = document.documentElement;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const YB = window.YB;
   const WA = n => `https://wa.me/34617781215?text=${encodeURIComponent(n)}`;
   const esNum = (n, d = 0) => n.toLocaleString('es-ES', { minimumFractionDigits: d, maximumFractionDigits: d });
@@ -30,7 +29,7 @@
   $$('[data-theme-set]').forEach(b => b.addEventListener('click', e => {
     const t = b.dataset.themeSet;
     if (t === current()) return;
-    try { localStorage.setItem('yb-theme', t); localStorage.setItem('yb-theme-seen', '1'); } catch (_) {}
+    try { localStorage.setItem('yb-tema', t); localStorage.setItem('yb-tema-seen', '1'); } catch (_) {}
     if (!document.startViewTransition || reduce) { paintTheme(t); return; }
     const r = b.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
     const end = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
@@ -40,10 +39,10 @@
   }));
   // La primera vez se señala el selector para que el cliente sepa que puede comparar
   try {
-    if (!localStorage.getItem('yb-theme-seen') && current() === 'crema') {
+    if (!localStorage.getItem('yb-tema-seen') && current() === 'negro') {
       const sw = $('.theme-switch');
       setTimeout(() => { sw.classList.add('is-hint'); setTimeout(() => sw.classList.remove('is-hint'), 3400); }, 2200);
-      localStorage.setItem('yb-theme-seen', '1');
+      localStorage.setItem('yb-tema-seen', '1');
     }
   } catch (_) {}
 
@@ -225,23 +224,6 @@
     } else v.pause();
   }), { threshold: .3 });
   $$('video').forEach(v => { if (reduce) v.removeAttribute('autoplay'); vio.observe(v); });
-
-  /* ---------- Efectos con ratón: imán, inclinación y profundidad ---------- */
-  if (fine && !reduce) {
-    $$('.magnetic').forEach(b => {
-      b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .22}px, ${(e.clientY - r.top - r.height / 2) * .3}px)`; });
-      b.addEventListener('pointerleave', () => { b.style.transform = ''; });
-    });
-    $$('.tilt').forEach(c => {
-      c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; c.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-6px)`; });
-      c.addEventListener('pointerleave', () => { c.style.transform = ''; });
-    });
-    const stage = $('[data-depth]');
-    if (stage) stage.closest('section').addEventListener('pointermove', e => {
-      const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
-      $$('[data-layer]', stage).forEach(el => { const k = +el.dataset.layer; el.style.transform = `translate(${x * k * 2}px, ${y * k * 2}px)`; });
-    });
-  }
 
   /* ---------- Citas que rotan (portada) ---------- */
   $$('[data-rotator]').forEach(rot => {

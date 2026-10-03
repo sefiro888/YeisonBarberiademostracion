@@ -4,7 +4,7 @@ Web de demostración para **Yeison Barber Shop**, barbería en Av. Marqués de F
 
 **Ver la web:** https://sefiro888.github.io/YeisonBarberiademostracion/
 
-- Dos estilos para comparar: **Crema** y **Negro** (botón «Estilo»; también `?tema=negro`).
+- Se abre en **Negro** (como la fachada) y el botón «Estilo» cambia a **Crema** (también `?tema=crema`).
 - Letrero de neón OPEN/CLOSED y cuenta atrás según el horario real.
 - Carta con «Arma tu cita», test «Encuentra tu corte», 39 trabajos reales, reels y 75 reseñas de Booksy.
 

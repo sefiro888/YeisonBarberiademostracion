@@ -1,11 +1,10 @@
 /* Yeison Barber Shop · efectos que enganchan:
-   intro, scroll suave, cursor, navaja, rótulos, ritual, test, cuenta atrás y avisos de reseñas */
+   intro, scroll suave, navaja, rótulos, ritual, test, cuenta atrás y avisos de reseñas */
 (() => {
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const root = document.documentElement;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const YB = window.YB;
   const WA = n => `https://wa.me/34617781215?text=${encodeURIComponent(n)}`;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -54,32 +53,6 @@
   let lastY = scrollY, vel = 0;
   const tickVel = () => { const y = scrollY; vel += ((y - lastY) - vel) * .18; lastY = y; requestAnimationFrame(tickVel); };
   requestAnimationFrame(tickVel);
-
-  /* ---------- 3. Cursor de barbero ---------- */
-  const cursor = $('.cursor');
-  if (cursor && fine && !reduce && innerWidth > 1024) {
-    root.classList.add('has-cursor');
-    cursor.classList.add('is-hidden');
-    const dot = $('.cursor-dot', cursor), ring = $('.cursor-ring', cursor), snip = $('.cursor-snip', cursor);
-    let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
-    addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; cursor.classList.remove('is-hidden'); }, { passive: true });
-    document.addEventListener('pointerleave', () => cursor.classList.add('is-hidden'));
-    const loop = () => {
-      rx += (mx - rx) * .2; ry += (my - ry) * .2;
-      dot.style.transform = `translate(${mx}px, ${my}px)`;
-      ring.style.transform = `translate(${rx}px, ${ry}px)`;
-      snip.style.transform = `translate(${mx}px, ${my}px)`;
-      requestAnimationFrame(loop);
-    };
-    requestAnimationFrame(loop);
-    document.addEventListener('pointerover', e => {
-      const t = e.target;
-      const ver = t.closest('[data-cursor="ver"], .shot, .filmstrip a, .qopt, .rp figure, .quiz-pics img, .tp');
-      cursor.classList.toggle('is-ver', !!ver);
-      cursor.classList.toggle('is-link', !ver && !!t.closest('a, button, label, summary, select'));
-    });
-    addEventListener('pointerdown', () => { cursor.classList.remove('is-snip'); void cursor.offsetWidth; cursor.classList.add('is-snip'); });
-  }
 
   /* ---------- 4. Fotos que se revelan con un pase de navaja ---------- */
   const razors = $$('.razor');
@@ -318,11 +291,4 @@
     }, { passive: true });
   }
 
-  /* ---------- Foco de luz que sigue al ratón en la portada ---------- */
-  const hero = $('.hero');
-  if (hero && fine && !reduce) hero.addEventListener('pointermove', e => {
-    const r = hero.getBoundingClientRect();
-    hero.style.setProperty('--mx', `${e.clientX - r.left}px`);
-    hero.style.setProperty('--my', `${e.clientY - r.top}px`);
-  });
 })();

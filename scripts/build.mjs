@@ -41,7 +41,7 @@ const layout = (meta, body, file) => `<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${meta.title}</title>
 <meta name="description" content="${meta.desc}">
-<meta name="theme-color" content="#f6eedc">
+<meta name="theme-color" content="#0c0907">
 <link rel="icon" type="image/png" sizes="48x48" href="assets/img/marca/favicon-48.png">
 <link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
@@ -62,7 +62,7 @@ const layout = (meta, body, file) => `<!doctype html>
 <link rel="preload" href="assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=${v}">
 <link rel="stylesheet" href="assets/css/fx.css?v=${v}">
-<script>(function(d){d.classList.add('js');var t;try{var q=new URLSearchParams(location.search).get('tema');if(q==='negro'||q==='crema')localStorage.setItem('yb-theme',q);t=localStorage.getItem('yb-theme');if(sessionStorage.getItem('yb-nav'))d.classList.add('is-entering')}catch(e){}if(t==='negro')d.setAttribute('data-theme','negro');try{if(!sessionStorage.getItem('yb-intro')&&!sessionStorage.getItem('yb-nav')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('show-intro')}catch(e){}})(document.documentElement)</script>
+<script>(function(d){d.classList.add('js');var t;try{var q=new URLSearchParams(location.search).get('tema');if(q==='negro'||q==='crema')localStorage.setItem('yb-tema',q);t=localStorage.getItem('yb-tema');if(sessionStorage.getItem('yb-nav'))d.classList.add('is-entering')}catch(e){}if(t!=='crema')d.setAttribute('data-theme','negro');try{if(!sessionStorage.getItem('yb-intro')&&!sessionStorage.getItem('yb-nav')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('show-intro')}catch(e){}})(document.documentElement)</script>
 ${meta.ld ? `<script type="application/ld+json">${meta.ld}</script>` : ''}
 </head>
 <body class="page-${meta.nav}">
@@ -77,7 +77,6 @@ ${meta.ld ? `<script type="application/ld+json">${meta.ld}</script>` : ''}
     <p class="intro-skip">Toca para entrar</p>
   </div>
 </div>
-<div class="cursor" aria-hidden="true"><span class="cursor-ring"><b>Ver</b></span><span class="cursor-dot"></span><svg class="cursor-snip" viewBox="0 0 40 40"><g class="blade-a"><circle cx="11" cy="30" r="5"/><path d="M14 27 33 7"/></g><g class="blade-b"><circle cx="29" cy="30" r="5"/><path d="M26 27 7 7"/></g></svg></div>
 <div class="toasts" aria-live="polite"></div>
 <div class="veil" aria-hidden="true"><div class="veil-pole"></div><img src="assets/img/marca/logo-sm.png" alt="" width="420" height="365"></div>
 <div class="pole-progress" aria-hidden="true"><span></span></div>
@@ -150,8 +149,8 @@ ${body}
 
 <div class="theme-switch" role="group" aria-label="Color de la web">
   <span class="theme-switch-label">Estilo</span>
-  <button type="button" data-theme-set="crema" aria-pressed="true"><i class="sw-crema" aria-hidden="true"></i>Crema</button>
-  <button type="button" data-theme-set="negro" aria-pressed="false"><i class="sw-negro" aria-hidden="true"></i>Negro</button>
+  <button type="button" data-theme-set="negro" aria-pressed="true"><i class="sw-negro" aria-hidden="true"></i>Negro</button>
+  <button type="button" data-theme-set="crema" aria-pressed="false"><i class="sw-crema" aria-hidden="true"></i>Crema</button>
 </div>
 
 <nav class="dock" aria-label="Acciones rápidas">

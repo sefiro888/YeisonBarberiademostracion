@@ -9,7 +9,7 @@ const pages = fs.readdirSync(path.join(__dirname, '..')).filter(f => f.endsWith(
   const browser = await chromium.launch();
   for (const file of pages) for (const [name, vp, mobile] of [['d', { width: 1440, height: 900 }, false], ['m', { width: 390, height: 844 }, true]]) {
     const page = await browser.newPage({ viewport: vp, isMobile: mobile, hasTouch: mobile });
-    await page.addInitScript(() => { try { sessionStorage.setItem('yb-intro', '1'); sessionStorage.setItem('yb-toasts', '9'); localStorage.setItem('yb-theme-seen', '1'); } catch (e) {} });
+    await page.addInitScript(() => { try { sessionStorage.setItem('yb-intro', '1'); sessionStorage.setItem('yb-toasts', '9'); localStorage.setItem('yb-tema-seen', '1'); } catch (e) {} });
     const errors = [];
     page.on('pageerror', e => errors.push(e.message));
     page.on('console', m => m.type() === 'error' && !/maps|google|ERR_/.test(m.text()) && errors.push(m.text()));
